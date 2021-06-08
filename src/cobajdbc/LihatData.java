@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class LihatData {
     public String nim, nama, alamat;
     int jmlData;
-    String data[][] = new String[500][4];
+    String data[][] = new String[500][3];
     
     DBConnect connect = new DBConnect();    
     
@@ -78,7 +78,7 @@ public class LihatData {
     public String[][] readData(){ //dua dimensi (baris-kolom)
         try{
             int jmlData = 0; //menampung jumlah data sebanyak jumlah data yang ada, defaultnya 0
-            String data[][] = new String[getBanyakData()][4];//menampung array. barisnya isinya di getBanyakData,kolomnya itu atribut
+            String data[][] = new String[getBanyakData()][3];//menampung array. barisnya isinya di getBanyakData,kolomnya itu atribut
             String query = "Select * from `mahasiswa`"; //proses pengambilan data
             ResultSet resultSet = connect.statement.executeQuery(query); //result isinya tabel belum berupa string
             while(resultSet.next()){ //konversi tabel ke string
